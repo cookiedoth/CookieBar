@@ -9,5 +9,5 @@
 import Cocoa
 
 extension NSTouchBarItem.Identifier {
-    static let label = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.label")
+    static let time = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.time")
 }
