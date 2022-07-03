@@ -17,6 +17,8 @@
 		351DEC0E287115B100F312E9 /* TimeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC0D287115B100F312E9 /* TimeWidget.swift */; };
 		351DEC112871426000F312E9 /* BatteryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC102871426000F312E9 /* BatteryWidget.swift */; };
 		351DEC142871441A00F312E9 /* BatteryListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC132871441A00F312E9 /* BatteryListener.swift */; };
+		351DEC16287161BF00F312E9 /* Speedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC15287161BF00F312E9 /* Speedometer.swift */; };
+		351DEC182871623E00F312E9 /* KeyboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC172871623E00F312E9 /* KeyboardMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		351DEC0D287115B100F312E9 /* TimeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWidget.swift; sourceTree = "<group>"; };
 		351DEC102871426000F312E9 /* BatteryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidget.swift; sourceTree = "<group>"; };
 		351DEC132871441A00F312E9 /* BatteryListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryListener.swift; sourceTree = "<group>"; };
+		351DEC15287161BF00F312E9 /* Speedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speedometer.swift; sourceTree = "<group>"; };
+		351DEC172871623E00F312E9 /* KeyboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				351DEC122871440200F312E9 /* Helpers */,
 				351DEC0D287115B100F312E9 /* TimeWidget.swift */,
 				351DEC102871426000F312E9 /* BatteryWidget.swift */,
+				351DEC15287161BF00F312E9 /* Speedometer.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				351DEC132871441A00F312E9 /* BatteryListener.swift */,
+				351DEC172871623E00F312E9 /* KeyboardMonitor.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -168,8 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				351DEC0E287115B100F312E9 /* TimeWidget.swift in Sources */,
+				351DEC182871623E00F312E9 /* KeyboardMonitor.swift in Sources */,
 				351DEC142871441A00F312E9 /* BatteryListener.swift in Sources */,
 				351DEC112871426000F312E9 /* BatteryWidget.swift in Sources */,
+				351DEC16287161BF00F312E9 /* Speedometer.swift in Sources */,
 				351DEBF728710DE900F312E9 /* ViewController.swift in Sources */,
 				351DEC052871109500F312E9 /* WindowController.swift in Sources */,
 				351DEC0B287111CF00F312E9 /* TouchBarIdentifiers.swift in Sources */,
