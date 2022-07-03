@@ -1,5 +1,5 @@
 //
-//  Time.swift
+//  BatteryWidget.swift
 //  CookieBar
 //
 //  Created by Semyon Savkin on 02/07/2022.
@@ -8,30 +8,32 @@
 
 import Cocoa
 
-class TimeWidget: NSCustomTouchBarItem {
+class BatteryWidget: NSCustomTouchBarItem {
+    private let batteryListener = BatteryListener()
     private let button = NSButton()
-    private let dateFormatter = DateFormatter()
-    private var timer: Timer!
 
     override init(identifier: NSTouchBarItem.Identifier) {
         super.init(identifier: identifier)
-
-        dateFormatter.dateFormat = "HH:mm"
 
         let cell = NSButtonCell()
         cell.isBordered = false
         button.cell = cell
         view = button
 
-        updateTime()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        batteryListener.start { [self] in
+            self.refresh()
+        }
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func updateTime() {
-        button.title = dateFormatter.string(from: Date())
+    func refresh() {
+        var newTitle = String(batteryListener.currentCharge) + "%"
+        if (batteryListener.isCharging) {
+            newTitle = "⚡️" + newTitle
+        }
+        button.title = newTitle
     }
 }

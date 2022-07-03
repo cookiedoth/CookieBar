@@ -14,6 +14,7 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
 
     func initializeItems() {
         items[NSTouchBarItem.Identifier.time] = TimeWidget(identifier: NSTouchBarItem.Identifier.time)
+        items[NSTouchBarItem.Identifier.battery] = BatteryWidget(identifier: NSTouchBarItem.Identifier.battery)
     }
 
     override init() {
@@ -24,7 +25,7 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
     func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
-        touchBar.defaultItemIdentifiers = [.time]
+        touchBar.defaultItemIdentifiers = [.time, .battery]
         return touchBar
     }
 
