@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        let _ = TouchBarController.shared
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

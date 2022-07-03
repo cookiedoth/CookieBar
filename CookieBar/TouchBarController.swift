@@ -10,6 +10,10 @@ import Cocoa
 
 class TouchBarController : NSObject, NSTouchBarDelegate {
 
+    static let shared = TouchBarController()
+
+    let touchBar = NSTouchBar()
+
     private var items: [NSTouchBarItem.Identifier : NSCustomTouchBarItem] = [:]
 
     func initializeItems() {
@@ -18,19 +22,26 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
         items[NSTouchBarItem.Identifier.speedometer] = Speedometer(identifier: NSTouchBarItem.Identifier.speedometer)
     }
 
-    override init() {
+    private override init() {
         super.init()
-        initializeItems()
-    }
-
-    func makeTouchBar() -> NSTouchBar? {
-        let touchBar = NSTouchBar()
+        print("here")
         touchBar.delegate = self
         touchBar.defaultItemIdentifiers = [.time, .battery, .speedometer]
-        return touchBar
+        initializeItems()
+        self.presentTouchBar()
     }
+
+    func foo() {}
 
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         return items[identifier]
+    }
+    
+    @objc private func presentTouchBar() {
+        NSTouchBar.presentSystemModalTouchBar(touchBar, placement: 1, systemTrayItemIdentifier: .controlStripItem)
+    }
+    
+    private func dismissTouchBar() {
+        NSTouchBar.minimizeSystemModalTouchBar(touchBar)
     }
 }

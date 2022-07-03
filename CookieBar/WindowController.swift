@@ -8,16 +8,11 @@
 
 import Cocoa
 
-class WindowController: NSWindowController, NSTouchBarDelegate {
-
-    private let touchBarController = TouchBarController()
+class WindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-    }
-
-    override func makeTouchBar() -> NSTouchBar? {
-        return touchBarController.makeTouchBar()
+        print("opa")
     }
 
 }

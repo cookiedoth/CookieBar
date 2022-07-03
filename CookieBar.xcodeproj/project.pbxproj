@@ -19,6 +19,9 @@
 		351DEC142871441A00F312E9 /* BatteryListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC132871441A00F312E9 /* BatteryListener.swift */; };
 		351DEC16287161BF00F312E9 /* Speedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC15287161BF00F312E9 /* Speedometer.swift */; };
 		351DEC182871623E00F312E9 /* KeyboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC172871623E00F312E9 /* KeyboardMonitor.swift */; };
+		351DEC1E2871878400F312E9 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351DEC1D2871878400F312E9 /* DFRFoundation.framework */; };
+		35A7A3D5287230B900F30886 /* TouchBarPrivateApi-Bridging.h in Headers */ = {isa = PBXBuildFile; fileRef = 351DEC1A28717F7B00F312E9 /* TouchBarPrivateApi-Bridging.h */; };
+		35A7A3D6287230BC00F30886 /* TouchBarPrivateApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 351DEC1B28717FA500F312E9 /* TouchBarPrivateApi.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		351DEC132871441A00F312E9 /* BatteryListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryListener.swift; sourceTree = "<group>"; };
 		351DEC15287161BF00F312E9 /* Speedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speedometer.swift; sourceTree = "<group>"; };
 		351DEC172871623E00F312E9 /* KeyboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMonitor.swift; sourceTree = "<group>"; };
+		351DEC1A28717F7B00F312E9 /* TouchBarPrivateApi-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchBarPrivateApi-Bridging.h"; sourceTree = "<group>"; };
+		351DEC1B28717FA500F312E9 /* TouchBarPrivateApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBarPrivateApi.h; sourceTree = "<group>"; };
+		351DEC1D2871878400F312E9 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351DEC1E2871878400F312E9 /* DFRFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +62,7 @@
 			children = (
 				351DEBF328710DE900F312E9 /* CookieBar */,
 				351DEBF228710DE900F312E9 /* Products */,
+				351DEC1C2871878400F312E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +77,8 @@
 		351DEBF328710DE900F312E9 /* CookieBar */ = {
 			isa = PBXGroup;
 			children = (
+				351DEC1B28717FA500F312E9 /* TouchBarPrivateApi.h */,
+				351DEC1A28717F7B00F312E9 /* TouchBarPrivateApi-Bridging.h */,
 				351DEC0C2871158B00F312E9 /* Widgets */,
 				351DEBF428710DE900F312E9 /* AppDelegate.swift */,
 				351DEBF628710DE900F312E9 /* ViewController.swift */,
@@ -103,13 +113,34 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		351DEC1C2871878400F312E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				351DEC1D2871878400F312E9 /* DFRFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		35A7A3D4287230B400F30886 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35A7A3D5287230B900F30886 /* TouchBarPrivateApi-Bridging.h in Headers */,
+				35A7A3D6287230BC00F30886 /* TouchBarPrivateApi.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		351DEBF028710DE900F312E9 /* CookieBar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 351DEC0128710DEA00F312E9 /* Build configuration list for PBXNativeTarget "CookieBar" */;
 			buildPhases = (
+				35A7A3D4287230B400F30886 /* Headers */,
 				351DEBED28710DE900F312E9 /* Sources */,
 				351DEBEE28710DE900F312E9 /* Frameworks */,
 				351DEBEF28710DE900F312E9 /* Resources */,
@@ -329,7 +360,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cookiedoth.CookieBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CookieBar/TouchBarPrivateApi-Bridging.h";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Debug;
 		};
@@ -347,7 +383,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cookiedoth.CookieBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CookieBar/TouchBarPrivateApi-Bridging.h";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Release;
 		};
