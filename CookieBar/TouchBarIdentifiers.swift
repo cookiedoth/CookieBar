@@ -9,6 +9,7 @@
 import Cocoa
 
 extension NSTouchBarItem.Identifier {
+    static let esc = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.esc")
     static let time = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.time")
     static let battery = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.battery")
     static let speedometer = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.speedometer")

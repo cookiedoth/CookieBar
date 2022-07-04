@@ -20,17 +20,20 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
         items[NSTouchBarItem.Identifier.time] = TimeWidget(identifier: NSTouchBarItem.Identifier.time)
         items[NSTouchBarItem.Identifier.battery] = BatteryWidget(identifier: NSTouchBarItem.Identifier.battery)
         items[NSTouchBarItem.Identifier.speedometer] = Speedometer(identifier: NSTouchBarItem.Identifier.speedometer)
+        items[NSTouchBarItem.Identifier.esc] = EscButton(identifier: NSTouchBarItem.Identifier.esc)
     }
 
     private override init() {
         super.init()
         touchBar.delegate = self
-        touchBar.defaultItemIdentifiers = [.time, .battery, .speedometer]
+        touchBar.defaultItemIdentifiers = [
+            .esc,
+            .time,
+            .battery,
+            .speedometer]
         initializeItems()
         self.presentTouchBar()
     }
-
-    func foo() {}
 
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         return items[identifier]
