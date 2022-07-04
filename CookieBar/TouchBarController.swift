@@ -24,7 +24,6 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
 
     private override init() {
         super.init()
-        print("here")
         touchBar.delegate = self
         touchBar.defaultItemIdentifiers = [.time, .battery, .speedometer]
         initializeItems()

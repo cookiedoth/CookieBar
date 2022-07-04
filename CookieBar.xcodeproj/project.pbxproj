@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		351DEBF528710DE900F312E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEBF428710DE900F312E9 /* AppDelegate.swift */; };
-		351DEBF728710DE900F312E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEBF628710DE900F312E9 /* ViewController.swift */; };
 		351DEBF928710DEA00F312E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 351DEBF828710DEA00F312E9 /* Assets.xcassets */; };
 		351DEBFC28710DEA00F312E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351DEBFA28710DEA00F312E9 /* Main.storyboard */; };
-		351DEC052871109500F312E9 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC042871109500F312E9 /* WindowController.swift */; };
 		351DEC092871115B00F312E9 /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC082871115B00F312E9 /* TouchBarController.swift */; };
 		351DEC0B287111CF00F312E9 /* TouchBarIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC0A287111CF00F312E9 /* TouchBarIdentifiers.swift */; };
 		351DEC0E287115B100F312E9 /* TimeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEC0D287115B100F312E9 /* TimeWidget.swift */; };
@@ -27,12 +25,10 @@
 /* Begin PBXFileReference section */
 		351DEBF128710DE900F312E9 /* CookieBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		351DEBF428710DE900F312E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		351DEBF628710DE900F312E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		351DEBF828710DEA00F312E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		351DEBFB28710DEA00F312E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		351DEBFD28710DEA00F312E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		351DEBFE28710DEA00F312E9 /* CookieBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CookieBar.entitlements; sourceTree = "<group>"; };
-		351DEC042871109500F312E9 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		351DEC082871115B00F312E9 /* TouchBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarController.swift; sourceTree = "<group>"; };
 		351DEC0A287111CF00F312E9 /* TouchBarIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarIdentifiers.swift; sourceTree = "<group>"; };
 		351DEC0D287115B100F312E9 /* TimeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWidget.swift; sourceTree = "<group>"; };
@@ -77,16 +73,13 @@
 		351DEBF328710DE900F312E9 /* CookieBar */ = {
 			isa = PBXGroup;
 			children = (
-				351DEC1B28717FA500F312E9 /* TouchBarPrivateApi.h */,
-				351DEC1A28717F7B00F312E9 /* TouchBarPrivateApi-Bridging.h */,
+				3555B8CE2872890900A2BAA2 /* CBridge */,
 				351DEC0C2871158B00F312E9 /* Widgets */,
 				351DEBF428710DE900F312E9 /* AppDelegate.swift */,
-				351DEBF628710DE900F312E9 /* ViewController.swift */,
 				351DEBF828710DEA00F312E9 /* Assets.xcassets */,
 				351DEBFA28710DEA00F312E9 /* Main.storyboard */,
 				351DEBFD28710DEA00F312E9 /* Info.plist */,
 				351DEBFE28710DEA00F312E9 /* CookieBar.entitlements */,
-				351DEC042871109500F312E9 /* WindowController.swift */,
 				351DEC082871115B00F312E9 /* TouchBarController.swift */,
 				351DEC0A287111CF00F312E9 /* TouchBarIdentifiers.swift */,
 			);
@@ -119,6 +112,15 @@
 				351DEC1D2871878400F312E9 /* DFRFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3555B8CE2872890900A2BAA2 /* CBridge */ = {
+			isa = PBXGroup;
+			children = (
+				351DEC1A28717F7B00F312E9 /* TouchBarPrivateApi-Bridging.h */,
+				351DEC1B28717FA500F312E9 /* TouchBarPrivateApi.h */,
+			);
+			path = CBridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,8 +211,6 @@
 				351DEC142871441A00F312E9 /* BatteryListener.swift in Sources */,
 				351DEC112871426000F312E9 /* BatteryWidget.swift in Sources */,
 				351DEC16287161BF00F312E9 /* Speedometer.swift in Sources */,
-				351DEBF728710DE900F312E9 /* ViewController.swift in Sources */,
-				351DEC052871109500F312E9 /* WindowController.swift in Sources */,
 				351DEC0B287111CF00F312E9 /* TouchBarIdentifiers.swift in Sources */,
 				351DEBF528710DE900F312E9 /* AppDelegate.swift in Sources */,
 				351DEC092871115B00F312E9 /* TouchBarController.swift in Sources */,
@@ -360,7 +360,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cookiedoth.CookieBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CookieBar/TouchBarPrivateApi-Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "CookieBar/CBridge/TouchBarPrivateApi-Bridging.h";
 				SWIFT_VERSION = 5.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,7 +383,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cookiedoth.CookieBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CookieBar/TouchBarPrivateApi-Bridging.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "CookieBar/CBridge/TouchBarPrivateApi-Bridging.h";
 				SWIFT_VERSION = 5.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
