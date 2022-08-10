@@ -15,12 +15,18 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
     let touchBar = NSTouchBar()
 
     private var items: [NSTouchBarItem.Identifier : NSCustomTouchBarItem] = [:]
+    private var defaultIdentifiers: [NSTouchBarItem.Identifier] = []
 
     func initializeItems() {
         items[NSTouchBarItem.Identifier.time] = TimeWidget(identifier: NSTouchBarItem.Identifier.time)
         items[NSTouchBarItem.Identifier.battery] = BatteryWidget(identifier: NSTouchBarItem.Identifier.battery)
         items[NSTouchBarItem.Identifier.speedometer] = Speedometer(identifier: NSTouchBarItem.Identifier.speedometer)
         items[NSTouchBarItem.Identifier.esc] = EscButton(identifier: NSTouchBarItem.Identifier.esc)
+        let volumeSlider = VolumeSlider(identifier: NSTouchBarItem.Identifier.volumeSlider)
+        let closeButton = CloseButton(identifier: NSTouchBarItem.Identifier.closeButton)
+        items[NSTouchBarItem.Identifier.volumeSlider] = volumeSlider
+        items[NSTouchBarItem.Identifier.closeButton] = closeButton
+        items[NSTouchBarItem.Identifier.volume] = VolumeButton(identifier: NSTouchBarItem.Identifier.volume, touchBar: touchBar, volumeSlider: volumeSlider, closeButton: closeButton)
     }
 
     private override init() {
@@ -30,7 +36,9 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
             .esc,
             .time,
             .battery,
-            .speedometer]
+            .speedometer,
+            .volume]
+        self.defaultIdentifiers = touchBar.defaultItemIdentifiers
         initializeItems()
         self.presentTouchBar()
     }
@@ -45,5 +53,9 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
     
     private func dismissTouchBar() {
         NSTouchBar.minimizeSystemModalTouchBar(touchBar)
+    }
+
+    func restoreDefaultView() {
+        touchBar.defaultItemIdentifiers = self.defaultIdentifiers
     }
 }
