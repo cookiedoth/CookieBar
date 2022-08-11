@@ -14,9 +14,13 @@ extension NSTouchBarItem.Identifier {
     static let battery = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.battery")
     static let speedometer = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.speedometer")
     static let volume = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.volume")
+    static let brightness = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.brightness")
 
     static let volumeSlider = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.volumeSlider")
-    static let closeButton = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.closeButton")
+    static let closeVolumeBar = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.closeVolumeBar")
+
+    static let brightnessSlider = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.brightnessSlider")
+    static let closeBrightnessBar = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.closeBrightnessBar")
 
     static let controlStripItem = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.controlStripItem")
 }

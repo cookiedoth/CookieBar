@@ -25,6 +25,10 @@
 		3590CBBB288E756F00E9A56A /* VolumeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590CBBA288E756F00E9A56A /* VolumeController.swift */; };
 		35A7A3D5287230B900F30886 /* TouchBarPrivateApi-Bridging.h in Headers */ = {isa = PBXBuildFile; fileRef = 351DEC1A28717F7B00F312E9 /* TouchBarPrivateApi-Bridging.h */; };
 		35A7A3D6287230BC00F30886 /* TouchBarPrivateApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 351DEC1B28717FA500F312E9 /* TouchBarPrivateApi.h */; };
+		35D5142228A4D74E00B04E78 /* BrightnessButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142128A4D74E00B04E78 /* BrightnessButton.swift */; };
+		35D5142428A4DAB600B04E78 /* BrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142328A4DAB600B04E78 /* BrightnessSlider.swift */; };
+		35D5142628A4DBC100B04E78 /* SystemSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142528A4DBC100B04E78 /* SystemSlider.swift */; };
+		35D5142828A4E7E300B04E78 /* BrightnessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142728A4E7E300B04E78 /* BrightnessController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,10 @@
 		3566B579288538AB000463E3 /* VolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
 		3590CBB6288E5FEC00E9A56A /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		3590CBBA288E756F00E9A56A /* VolumeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeController.swift; sourceTree = "<group>"; };
+		35D5142128A4D74E00B04E78 /* BrightnessButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessButton.swift; sourceTree = "<group>"; };
+		35D5142328A4DAB600B04E78 /* BrightnessSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessSlider.swift; sourceTree = "<group>"; };
+		35D5142528A4DBC100B04E78 /* SystemSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSlider.swift; sourceTree = "<group>"; };
+		35D5142728A4E7E300B04E78 /* BrightnessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 				351DEC15287161BF00F312E9 /* Speedometer.swift */,
 				3555B8CF28728FDC00A2BAA2 /* EscButton.swift */,
 				3566B5762885324A000463E3 /* VolumeButton.swift */,
+				35D5142128A4D74E00B04E78 /* BrightnessButton.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -116,6 +125,7 @@
 				351DEC132871441A00F312E9 /* BatteryListener.swift */,
 				351DEC172871623E00F312E9 /* KeyboardMonitor.swift */,
 				3590CBBA288E756F00E9A56A /* VolumeController.swift */,
+				35D5142728A4E7E300B04E78 /* BrightnessController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -142,6 +152,8 @@
 			children = (
 				3566B579288538AB000463E3 /* VolumeSlider.swift */,
 				3590CBB6288E5FEC00E9A56A /* CloseButton.swift */,
+				35D5142328A4DAB600B04E78 /* BrightnessSlider.swift */,
+				35D5142528A4DBC100B04E78 /* SystemSlider.swift */,
 			);
 			path = AuxBars;
 			sourceTree = "<group>";
@@ -229,10 +241,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D5142828A4E7E300B04E78 /* BrightnessController.swift in Sources */,
 				351DEC0E287115B100F312E9 /* TimeWidget.swift in Sources */,
 				351DEC182871623E00F312E9 /* KeyboardMonitor.swift in Sources */,
+				35D5142428A4DAB600B04E78 /* BrightnessSlider.swift in Sources */,
 				3555B8D028728FDC00A2BAA2 /* EscButton.swift in Sources */,
 				351DEC142871441A00F312E9 /* BatteryListener.swift in Sources */,
+				35D5142628A4DBC100B04E78 /* SystemSlider.swift in Sources */,
 				3566B57A288538AB000463E3 /* VolumeSlider.swift in Sources */,
 				351DEC112871426000F312E9 /* BatteryWidget.swift in Sources */,
 				3590CBB7288E5FEC00E9A56A /* CloseButton.swift in Sources */,
@@ -241,6 +256,7 @@
 				351DEBF528710DE900F312E9 /* AppDelegate.swift in Sources */,
 				3590CBBB288E756F00E9A56A /* VolumeController.swift in Sources */,
 				351DEC092871115B00F312E9 /* TouchBarController.swift in Sources */,
+				35D5142228A4D74E00B04E78 /* BrightnessButton.swift in Sources */,
 				3566B5772885324A000463E3 /* VolumeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

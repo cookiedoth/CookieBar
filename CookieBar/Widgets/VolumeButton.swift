@@ -38,7 +38,7 @@ class VolumeButton: NSCustomTouchBarItem {
     }
     
     @objc func press() {
-        touchBar.defaultItemIdentifiers = [.volumeSlider, .closeButton]
+        touchBar.defaultItemIdentifiers = [.volumeSlider, .closeVolumeBar]
     }
 
     @objc func retrieveVolume() {

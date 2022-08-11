@@ -18,15 +18,19 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
     private var defaultIdentifiers: [NSTouchBarItem.Identifier] = []
 
     func initializeItems() {
-        items[NSTouchBarItem.Identifier.time] = TimeWidget(identifier: NSTouchBarItem.Identifier.time)
-        items[NSTouchBarItem.Identifier.battery] = BatteryWidget(identifier: NSTouchBarItem.Identifier.battery)
-        items[NSTouchBarItem.Identifier.speedometer] = Speedometer(identifier: NSTouchBarItem.Identifier.speedometer)
-        items[NSTouchBarItem.Identifier.esc] = EscButton(identifier: NSTouchBarItem.Identifier.esc)
-        let volumeSlider = VolumeSlider(identifier: NSTouchBarItem.Identifier.volumeSlider)
-        let closeButton = CloseButton(identifier: NSTouchBarItem.Identifier.closeButton)
-        items[NSTouchBarItem.Identifier.volumeSlider] = volumeSlider
-        items[NSTouchBarItem.Identifier.closeButton] = closeButton
-        items[NSTouchBarItem.Identifier.volume] = VolumeButton(identifier: NSTouchBarItem.Identifier.volume, touchBar: touchBar, volumeSlider: volumeSlider, closeButton: closeButton)
+        items[.time] = TimeWidget(identifier: .time)
+        items[.battery] = BatteryWidget(identifier: .battery)
+        items[.speedometer] = Speedometer(identifier: .speedometer)
+        items[.esc] = EscButton(identifier: .esc)
+        let volumeSlider = VolumeSlider(identifier: .volumeSlider)
+        let closeVolumeBar = CloseButton(identifier: .closeVolumeBar)
+        items[.volumeSlider] = volumeSlider
+        items[.closeVolumeBar] = closeVolumeBar
+        items[.volume] = VolumeButton(identifier: .volume, touchBar: touchBar, volumeSlider: volumeSlider, closeButton: closeVolumeBar)
+        let brightnessSlider = BrightnessSlider(identifier: .brightnessSlider)
+        items[.brightnessSlider] = brightnessSlider
+        items[.closeBrightnessBar] = CloseButton(identifier: .closeBrightnessBar)
+        items[.brightness] = BrightnessButton(identifier: .brightness, touchBar: touchBar, brightnessSlider: brightnessSlider)
     }
 
     private override init() {
@@ -37,7 +41,8 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
             .time,
             .battery,
             .speedometer,
-            .volume]
+            .volume,
+            .brightness]
         self.defaultIdentifiers = touchBar.defaultItemIdentifiers
         initializeItems()
         self.presentTouchBar()
