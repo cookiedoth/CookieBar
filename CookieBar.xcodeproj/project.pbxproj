@@ -28,6 +28,7 @@
 		35D07AE428A7A0280040A6DC /* WeatherWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D07AE328A7A0280040A6DC /* WeatherWidget.swift */; };
 		35D07AE628A7A05B0040A6DC /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D07AE528A7A05B0040A6DC /* ConfigManager.swift */; };
 		35D07AE828A7A34C0040A6DC /* defaultConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 35D07AE728A7A34C0040A6DC /* defaultConfig.json */; };
+		35D07AEA28A892DD0040A6DC /* CoffeeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D07AE928A892DD0040A6DC /* CoffeeButton.swift */; };
 		35D5142228A4D74E00B04E78 /* BrightnessButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142128A4D74E00B04E78 /* BrightnessButton.swift */; };
 		35D5142428A4DAB600B04E78 /* BrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142328A4DAB600B04E78 /* BrightnessSlider.swift */; };
 		35D5142628A4DBC100B04E78 /* SystemSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142528A4DBC100B04E78 /* SystemSlider.swift */; };
@@ -59,6 +60,7 @@
 		35D07AE328A7A0280040A6DC /* WeatherWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWidget.swift; sourceTree = "<group>"; };
 		35D07AE528A7A05B0040A6DC /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		35D07AE728A7A34C0040A6DC /* defaultConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = defaultConfig.json; sourceTree = "<group>"; };
+		35D07AE928A892DD0040A6DC /* CoffeeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeButton.swift; sourceTree = "<group>"; };
 		35D5142128A4D74E00B04E78 /* BrightnessButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessButton.swift; sourceTree = "<group>"; };
 		35D5142328A4DAB600B04E78 /* BrightnessSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessSlider.swift; sourceTree = "<group>"; };
 		35D5142528A4DBC100B04E78 /* SystemSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSlider.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				3566B5762885324A000463E3 /* VolumeButton.swift */,
 				35D5142128A4D74E00B04E78 /* BrightnessButton.swift */,
 				35D07AE328A7A0280040A6DC /* WeatherWidget.swift */,
+				35D07AE928A892DD0040A6DC /* CoffeeButton.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35D5142828A4E7E300B04E78 /* BrightnessController.swift in Sources */,
+				35D07AEA28A892DD0040A6DC /* CoffeeButton.swift in Sources */,
 				35D07AE628A7A05B0040A6DC /* ConfigManager.swift in Sources */,
 				351DEC0E287115B100F312E9 /* TimeWidget.swift in Sources */,
 				351DEC182871623E00F312E9 /* KeyboardMonitor.swift in Sources */,
