@@ -10,7 +10,7 @@ import Cocoa
 
 class VolumeButton: NSCustomTouchBarItem {
     private let volumeImages = [
-        NSImage(named: NSImage.touchBarAudioOutputVolumeOffTemplateName)!,
+        NSImage(named: NSImage.touchBarAudioOutputMuteTemplateName)!,
         NSImage(named: NSImage.touchBarAudioOutputVolumeLowTemplateName)!,
         NSImage(named: NSImage.touchBarAudioOutputVolumeMediumTemplateName)!,
         NSImage(named: NSImage.touchBarAudioOutputVolumeHighTemplateName)!
