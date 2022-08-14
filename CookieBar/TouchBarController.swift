@@ -31,10 +31,12 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
         items[.brightnessSlider] = brightnessSlider
         items[.closeBrightnessBar] = CloseButton(identifier: .closeBrightnessBar)
         items[.brightness] = BrightnessButton(identifier: .brightness, touchBar: touchBar, brightnessSlider: brightnessSlider)
+        items[.weather] = WeatherWidget(identifier: .weather, apiKey: ConfigManager.shared.apiKey!)
     }
 
     private override init() {
         super.init()
+        ConfigManager.shared.readConfig()
         touchBar.delegate = self
         touchBar.defaultItemIdentifiers = [
             .esc,
@@ -42,7 +44,8 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
             .battery,
             .speedometer,
             .volume,
-            .brightness]
+            .brightness,
+            .weather]
         self.defaultIdentifiers = touchBar.defaultItemIdentifiers
         initializeItems()
         self.presentTouchBar()
