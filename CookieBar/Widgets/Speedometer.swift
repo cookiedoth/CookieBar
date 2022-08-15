@@ -31,7 +31,9 @@ class Speedometer: NSCustomTouchBarItem {
         let cell = NSButtonCell()
         cell.isBordered = false
         button.cell = cell
-        button.font = NSFont(name: "Comic Sans MS", size: 20)
+
+        button.widthAnchor.constraint(greaterThanOrEqualToConstant: 10)
+
         view = NSStackView(views: [imageView, button])
 
         keyboardMonitor.start(callback: { [self] (speed: Int) in
