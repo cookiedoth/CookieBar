@@ -11,14 +11,27 @@ import Cocoa
 class BatteryWidget: NSCustomTouchBarItem {
     private let batteryListener = BatteryListener()
     private let button = NSButton()
+    static let segments = 40
+    static let ratio = Double(100) / Double(segments)
+    private var images: [[NSImage]] = [[], []]
+    private let imageView = NSImageView()
 
     override init(identifier: NSTouchBarItem.Identifier) {
         super.init(identifier: identifier)
 
+        for i in 0...BatteryWidget.segments {
+            self.images[0].append(NSImage(named: "battery\(i)")!)
+            self.images[1].append(NSImage(named: "battery\(i)_charging")!)
+        }
+
+        self.imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        self.imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
         let cell = NSButtonCell()
         cell.isBordered = false
         button.cell = cell
-        view = button
+
+        view = NSStackView(views: [imageView, button])
 
         batteryListener.start { [self] in
             self.refresh()
@@ -30,10 +43,8 @@ class BatteryWidget: NSCustomTouchBarItem {
     }
 
     func refresh() {
-        var newTitle = String(batteryListener.currentCharge) + "%"
-        if (batteryListener.isCharging) {
-            newTitle = "⚡️" + newTitle
-        }
-        button.title = newTitle
+        let imageId = Int(round(Double(batteryListener.currentCharge) / BatteryWidget.ratio))
+        self.imageView.image = self.images[batteryListener.isCharging ? 1 : 0][imageId]
+        button.title = String(batteryListener.currentCharge) + "%"
     }
 }
