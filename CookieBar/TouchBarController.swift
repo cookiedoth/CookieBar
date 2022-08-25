@@ -35,6 +35,8 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
         items[.coffee] = CoffeeButton(identifier: .coffee)
         items[.headphones] = HeadphonesWidget(identifier: .headphones)
         items[.reminders] = RemindersWidget(identifier: .reminders)
+        items[.volumeEmptyArea] = EmptyScrollableArea(identifier: .volumeEmptyArea)
+        items[.brightnessEmptyArea] = EmptyScrollableArea(identifier: .brightnessEmptyArea)
     }
 
     private override init() {

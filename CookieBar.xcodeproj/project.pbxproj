@@ -21,6 +21,7 @@
 		351DEC1E2871878400F312E9 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351DEC1D2871878400F312E9 /* DFRFoundation.framework */; };
 		352219D128B735890099F751 /* AppleScriptUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352219D028B735890099F751 /* AppleScriptUtil.swift */; };
 		352219D328B73AC40099F751 /* completeReminder.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 352219D228B73AC40099F751 /* completeReminder.scpt */; };
+		352219D528B741D50099F751 /* EmptyScrollableArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352219D428B741D50099F751 /* EmptyScrollableArea.swift */; };
 		3555B8D028728FDC00A2BAA2 /* EscButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3555B8CF28728FDC00A2BAA2 /* EscButton.swift */; };
 		355F6A2028AA294D005CEB77 /* HeadphonesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355F6A1F28AA294D005CEB77 /* HeadphonesController.swift */; };
 		355F6A2228AA2CC8005CEB77 /* HeadphonesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355F6A2128AA2CC8005CEB77 /* HeadphonesWidget.swift */; };
@@ -61,6 +62,7 @@
 		351DEC1D2871878400F312E9 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		352219D028B735890099F751 /* AppleScriptUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptUtil.swift; sourceTree = "<group>"; };
 		352219D228B73AC40099F751 /* completeReminder.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = completeReminder.scpt; sourceTree = "<group>"; };
+		352219D428B741D50099F751 /* EmptyScrollableArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScrollableArea.swift; sourceTree = "<group>"; };
 		3555B8CF28728FDC00A2BAA2 /* EscButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscButton.swift; sourceTree = "<group>"; };
 		355F6A1F28AA294D005CEB77 /* HeadphonesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadphonesController.swift; sourceTree = "<group>"; };
 		355F6A2128AA2CC8005CEB77 /* HeadphonesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadphonesWidget.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				3590CBB6288E5FEC00E9A56A /* CloseButton.swift */,
 				35D5142328A4DAB600B04E78 /* BrightnessSlider.swift */,
 				35D5142528A4DBC100B04E78 /* SystemSlider.swift */,
+				352219D428B741D50099F751 /* EmptyScrollableArea.swift */,
 			);
 			path = AuxBars;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				351DEC092871115B00F312E9 /* TouchBarController.swift in Sources */,
 				35D5142228A4D74E00B04E78 /* BrightnessButton.swift in Sources */,
 				3566B5772885324A000463E3 /* VolumeButton.swift in Sources */,
+				352219D528B741D50099F751 /* EmptyScrollableArea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

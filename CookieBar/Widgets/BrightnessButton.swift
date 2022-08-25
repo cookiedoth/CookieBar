@@ -30,7 +30,7 @@ class BrightnessButton: NSCustomTouchBarItem {
     
     @objc func press() {
         brightnessSlider.setValue(value: BrightnessController.shared.getBrightness())
-        touchBar.defaultItemIdentifiers = [.brightnessSlider, .closeBrightnessBar]
+        touchBar.defaultItemIdentifiers = [.brightnessEmptyArea, .brightnessSlider, .closeBrightnessBar]
     }
 }
 

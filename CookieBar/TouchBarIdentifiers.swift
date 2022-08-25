@@ -20,9 +20,11 @@ extension NSTouchBarItem.Identifier {
     static let headphones = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.headphones")
     static let reminders = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.reminders")
 
+    static let volumeEmptyArea = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.volumeEmptyArea")
     static let volumeSlider = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.volumeSlider")
     static let closeVolumeBar = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.closeVolumeBar")
 
+    static let brightnessEmptyArea = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.brightnessEmptyArea")
     static let brightnessSlider = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.brightnessSlider")
     static let closeBrightnessBar = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.closeBrightnessBar")
 
