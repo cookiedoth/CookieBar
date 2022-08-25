@@ -34,6 +34,7 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
         items[.weather] = WeatherWidget(identifier: .weather, apiKey: ConfigManager.shared.apiKey!)
         items[.coffee] = CoffeeButton(identifier: .coffee)
         items[.headphones] = HeadphonesWidget(identifier: .headphones)
+        items[.reminders] = RemindersWidget(identifier: .reminders)
     }
 
     private override init() {
@@ -42,14 +43,15 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
         touchBar.delegate = self
         touchBar.defaultItemIdentifiers = [
             .esc,
-            .time,
-            .battery,
-            .speedometer,
-            .volume,
-            .brightness,
+            .reminders,
             .weather,
             .coffee,
-            .headphones]
+            .headphones,
+            .volume,
+            .brightness,
+            .speedometer,
+            .battery,
+            .time]
         self.defaultIdentifiers = touchBar.defaultItemIdentifiers
         initializeItems()
         self.presentTouchBar()
