@@ -7,10 +7,12 @@
 //
 
 import Cocoa
+import EventKit
 
 class RemindersWidget: NSCustomTouchBarItem {
     private var stackView: NSStackView
     private var timer: Timer!
+    private var store = EKEventStore()
     
     override init(identifier: NSTouchBarItem.Identifier) {
         stackView = NSStackView(views: [])
@@ -21,26 +23,35 @@ class RemindersWidget: NSCustomTouchBarItem {
         scrollView.documentView = stackView
         view = scrollView
 
-        updateReminders()
-        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateReminders), userInfo: nil, repeats: true)
+        store.requestAccess(to: .reminder) { granted, error in
+            self.updateReminders()
+            NotificationCenter.default.addObserver(self, selector: #selector(self.updateReminders), name: Notification.Name.EKEventStoreChanged, object: nil)
+        }
     }
 
     @objc func completeReminder(sender: NSButton) {
-        _ = runAppleScriptFromResource(resourceName: "completeReminder", args: [sender.title])
-        updateReminders()
+        let buttonTitle = sender.title
+        self.store.fetchReminders(matching: self.store.predicateForReminders(in: nil), completion: {(_ reminders: [EKReminder]?) -> Void in
+            for reminder in reminders! {
+                if reminder.title == buttonTitle {
+                    try! self.store.remove(reminder, commit: true)
+                }
+            }
+        })
     }
 
     @objc func updateReminders() {
-        var buttons: [NSView] = []
-        if let reminders = runAppleScriptFromResource(resourceName: "getReminders") {
-            let nameArr = reminders.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: ", ")
-            for reminderName in nameArr {
-                if reminderName != "" {
-                    buttons.append(NSButton(title: reminderName, target: self, action: #selector(completeReminder)))
+        self.store.fetchReminders(matching: self.store.predicateForReminders(in: nil), completion: {(_ reminders: [EKReminder]?) -> Void in
+            var buttons: [NSView] = []
+            for reminder in reminders! {
+                if !reminder.isCompleted {
+                    buttons.append(NSButton(title: reminder.title, target: self, action: #selector(self.completeReminder)))
                 }
             }
-        }
-        stackView.setViews(buttons, in: .leading)
+            DispatchQueue.main.async {
+                self.stackView.setViews(buttons, in: .leading)
+            }
+        })
     }
     
     required init?(coder: NSCoder) {
