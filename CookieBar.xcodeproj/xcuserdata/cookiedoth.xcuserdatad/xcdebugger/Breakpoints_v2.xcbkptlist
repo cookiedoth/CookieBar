@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CookieBar/ConfigManager.swift"
-            timestampString = "683098678.690848"
+            timestampString = "683278399.939657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "tryParseConfig()"
             landmarkType = "7">
          </BreakpointContent>

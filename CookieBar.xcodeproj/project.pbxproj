@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		350EA03928B718FF00BB48A0 /* getReminders.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 350EA03828B718FF00BB48A0 /* getReminders.scpt */; };
+		351AA50428B9CFE500F6F619 /* MusicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351AA50328B9CFE500F6F619 /* MusicWidget.swift */; };
 		351DEBF528710DE900F312E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DEBF428710DE900F312E9 /* AppDelegate.swift */; };
 		351DEBF928710DEA00F312E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 351DEBF828710DEA00F312E9 /* Assets.xcassets */; };
 		351DEBFC28710DEA00F312E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 351DEBFA28710DEA00F312E9 /* Main.storyboard */; };
@@ -40,10 +41,13 @@
 		35D5142428A4DAB600B04E78 /* BrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142328A4DAB600B04E78 /* BrightnessSlider.swift */; };
 		35D5142628A4DBC100B04E78 /* SystemSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142528A4DBC100B04E78 /* SystemSlider.swift */; };
 		35D5142828A4E7E300B04E78 /* BrightnessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D5142728A4E7E300B04E78 /* BrightnessController.swift */; };
+		35E856F328B9BF2700CB1D8C /* MusicServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E856F228B9BF2700CB1D8C /* MusicServer.swift */; };
+		B1A0B0CD85CECA1C4D83567B /* Pods_CookieBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E133FC1AA6E7F91DAB280A /* Pods_CookieBar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		350EA03828B718FF00BB48A0 /* getReminders.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = getReminders.scpt; sourceTree = "<group>"; };
+		351AA50328B9CFE500F6F619 /* MusicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicWidget.swift; sourceTree = "<group>"; };
 		351DEBF128710DE900F312E9 /* CookieBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		351DEBF428710DE900F312E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		351DEBF828710DEA00F312E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +83,10 @@
 		35D5142328A4DAB600B04E78 /* BrightnessSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessSlider.swift; sourceTree = "<group>"; };
 		35D5142528A4DBC100B04E78 /* SystemSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSlider.swift; sourceTree = "<group>"; };
 		35D5142728A4E7E300B04E78 /* BrightnessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessController.swift; sourceTree = "<group>"; };
+		35E856F228B9BF2700CB1D8C /* MusicServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicServer.swift; sourceTree = "<group>"; };
+		47E133FC1AA6E7F91DAB280A /* Pods_CookieBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CookieBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		656A700182ACE299BFD7A0C1 /* Pods-CookieBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookieBar.release.xcconfig"; path = "Target Support Files/Pods-CookieBar/Pods-CookieBar.release.xcconfig"; sourceTree = "<group>"; };
+		DD0D4C58B66F54A942572254 /* Pods-CookieBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookieBar.debug.xcconfig"; path = "Target Support Files/Pods-CookieBar/Pods-CookieBar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +95,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				351DEC1E2871878400F312E9 /* DFRFoundation.framework in Frameworks */,
+				B1A0B0CD85CECA1C4D83567B /* Pods_CookieBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065D09BD9AF133946E98A953 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD0D4C58B66F54A942572254 /* Pods-CookieBar.debug.xcconfig */,
+				656A700182ACE299BFD7A0C1 /* Pods-CookieBar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		350EA03728B718E400BB48A0 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +126,7 @@
 				351DEBF328710DE900F312E9 /* CookieBar */,
 				351DEBF228710DE900F312E9 /* Products */,
 				351DEC1C2871878400F312E9 /* Frameworks */,
+				065D09BD9AF133946E98A953 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +153,7 @@
 				351DEC0A287111CF00F312E9 /* TouchBarIdentifiers.swift */,
 				35D07AE528A7A05B0040A6DC /* ConfigManager.swift */,
 				35D07AE728A7A34C0040A6DC /* defaultConfig.json */,
+				35E856F228B9BF2700CB1D8C /* MusicServer.swift */,
 			);
 			path = CookieBar;
 			sourceTree = "<group>";
@@ -153,6 +173,7 @@
 				35D07AE928A892DD0040A6DC /* CoffeeButton.swift */,
 				355F6A2128AA2CC8005CEB77 /* HeadphonesWidget.swift */,
 				3583054128B1831F00E50EE0 /* RemindersWidget.swift */,
+				351AA50328B9CFE500F6F619 /* MusicWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -174,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				351DEC1D2871878400F312E9 /* DFRFoundation.framework */,
+				47E133FC1AA6E7F91DAB280A /* Pods_CookieBar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,10 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 351DEC0128710DEA00F312E9 /* Build configuration list for PBXNativeTarget "CookieBar" */;
 			buildPhases = (
+				78ACFFD076A4F43481D630E3 /* [CP] Check Pods Manifest.lock */,
 				35A7A3D4287230B400F30886 /* Headers */,
 				351DEBED28710DE900F312E9 /* Sources */,
 				351DEBEE28710DE900F312E9 /* Frameworks */,
 				351DEBEF28710DE900F312E9 /* Resources */,
+				B108DDDC36E0F82575D9D546 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +304,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		78ACFFD076A4F43481D630E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CookieBar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B108DDDC36E0F82575D9D546 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CookieBar/Pods-CookieBar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CookieBar/Pods-CookieBar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CookieBar/Pods-CookieBar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		351DEBED28710DE900F312E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -296,6 +362,7 @@
 				3555B8D028728FDC00A2BAA2 /* EscButton.swift in Sources */,
 				351DEC142871441A00F312E9 /* BatteryListener.swift in Sources */,
 				35D5142628A4DBC100B04E78 /* SystemSlider.swift in Sources */,
+				351AA50428B9CFE500F6F619 /* MusicWidget.swift in Sources */,
 				3566B57A288538AB000463E3 /* VolumeSlider.swift in Sources */,
 				351DEC112871426000F312E9 /* BatteryWidget.swift in Sources */,
 				355F6A2028AA294D005CEB77 /* HeadphonesController.swift in Sources */,
@@ -303,6 +370,7 @@
 				351DEC16287161BF00F312E9 /* Speedometer.swift in Sources */,
 				351DEC0B287111CF00F312E9 /* TouchBarIdentifiers.swift in Sources */,
 				351DEBF528710DE900F312E9 /* AppDelegate.swift in Sources */,
+				35E856F328B9BF2700CB1D8C /* MusicServer.swift in Sources */,
 				3583054228B1831F00E50EE0 /* RemindersWidget.swift in Sources */,
 				3590CBBB288E756F00E9A56A /* VolumeController.swift in Sources */,
 				35D07AE428A7A0280040A6DC /* WeatherWidget.swift in Sources */,
@@ -444,6 +512,7 @@
 		};
 		351DEC0228710DEA00F312E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD0D4C58B66F54A942572254 /* Pods-CookieBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CookieBar/CookieBar.entitlements;
@@ -468,6 +537,7 @@
 		};
 		351DEC0328710DEA00F312E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 656A700182ACE299BFD7A0C1 /* Pods-CookieBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CookieBar/CookieBar.entitlements;

@@ -19,6 +19,7 @@ extension NSTouchBarItem.Identifier {
     static let coffee = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.coffee")
     static let headphones = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.headphones")
     static let reminders = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.reminders")
+    static let music = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.music")
 
     static let volumeEmptyArea = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.volumeEmptyArea")
     static let volumeSlider = NSTouchBarItem.Identifier("com.cookiedoth.CookieBar.volumeSlider")

@@ -37,6 +37,7 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
         items[.reminders] = RemindersWidget(identifier: .reminders)
         items[.volumeEmptyArea] = EmptyScrollableArea(identifier: .volumeEmptyArea)
         items[.brightnessEmptyArea] = EmptyScrollableArea(identifier: .brightnessEmptyArea)
+        items[.music] = MusicWidget(identifier: .music)
     }
 
     private override init() {
@@ -45,6 +46,7 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
         touchBar.delegate = self
         touchBar.defaultItemIdentifiers = [
             .esc,
+            .music,
             .reminders,
             .weather,
             .coffee,
@@ -56,6 +58,7 @@ class TouchBarController : NSObject, NSTouchBarDelegate {
             .time]
         self.defaultIdentifiers = touchBar.defaultItemIdentifiers
         initializeItems()
+        MusicServer.shared.start()
         self.presentTouchBar()
     }
 

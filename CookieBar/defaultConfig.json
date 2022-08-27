@@ -1,4 +1,5 @@
 {
     "api_key": "",
-    "headphones": ""
+    "headphones": "",
+    "music_server_port": 8080
 }

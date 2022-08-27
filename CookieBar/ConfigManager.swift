@@ -16,6 +16,7 @@ class ConfigManager: NSObject {
     
     var apiKey: String?
     var headphonesName: String?
+    var musicServerPort: Int?
     
     func tryParseConfig() -> Bool {
         if !FileManager.default.fileExists(atPath: ConfigManager.configPath) {
@@ -29,12 +30,15 @@ class ConfigManager: NSObject {
         
         apiKey = nil
         headphonesName = nil
-        if let root = json as? [String: Any],
-            let apiKeyAny = root["api_key"] {
+        if let root = json as? [String: Any] {
+            let apiKeyAny = root["api_key"]
             apiKey = apiKeyAny as? String
 
             let headphonesNameAny = root["headphones"]
             headphonesName = headphonesNameAny as? String
+
+            let musicServerPortAny = root["music_server_port"]
+            musicServerPort = musicServerPortAny as? Int
         }
         
         return true
