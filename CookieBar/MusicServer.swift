@@ -57,7 +57,9 @@ class MusicServer: NSObject {
 
     func start() {
         server["/music"] = websocket(text: { session, text in
-            self.lastSession = session
+            if (self.lastSession != session) {
+                self.lastSession = session
+            }
             self.updateStatus(text: text)
         })
         try! server.start(UInt16(ConfigManager.shared.musicServerPort!))
@@ -68,7 +70,7 @@ class MusicServer: NSObject {
     }
 
     @objc func flipPause() {
-        lastSession?.writeText(paused ? "play" : "pause")
+        lastSession?.writeText(self.paused ? "play" : "pause")
     }
 
     @objc func next() {

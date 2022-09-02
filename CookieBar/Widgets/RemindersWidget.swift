@@ -48,10 +48,20 @@ class RemindersWidget: NSCustomTouchBarItem {
                     buttons.append(NSButton(title: reminder.title, target: self, action: #selector(self.completeReminder)))
                 }
             }
+            buttons.append(NSButton(image: NSImage(named: NSImage.touchBarAddTemplateName)!, target: self, action: #selector(self.openReminders)))
             DispatchQueue.main.async {
                 self.stackView.setViews(buttons, in: .leading)
             }
         })
+    }
+
+    @objc func openReminders() {
+        if let remindersApp = FileManager.default.urls(
+            for: .applicationDirectory,
+            in: .systemDomainMask
+            ).first?.appendingPathComponent("Reminders.app") {
+            NSWorkspace.shared.open(remindersApp)
+        }
     }
     
     required init?(coder: NSCoder) {

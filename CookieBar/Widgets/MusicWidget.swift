@@ -13,6 +13,7 @@ class MusicWidget: NSCustomTouchBarItem, NSGestureRecognizerDelegate {
     private let artistLabel = NSButton()
     private let songLabel = NSButton()
     private var stackView: NSStackView!
+    private var labelView: NSStackView!
 
     private func setupButton(button: NSButton) {
         let cell = NSButtonCell()
@@ -39,27 +40,28 @@ class MusicWidget: NSCustomTouchBarItem, NSGestureRecognizerDelegate {
         imageView.imageScaling = .scaleProportionallyUpOrDown
         imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        let labelView = NSStackView(views: [songLabel, artistLabel])
+        labelView = NSStackView(views: [songLabel, artistLabel])
         labelView.orientation = .vertical
         labelView.alignment = .left
         labelView.spacing = 0
         stackView = NSStackView(views: [imageView, labelView])
         stackView.edgeInsets.right = 20
+        view = stackView
         statusUpdated()
     }
 
     func statusUpdated() {
         if MusicServer.shared.connected {
             if MusicServer.shared.paused {
-                imageView.image = NSImage(named: NSImage.touchBarPauseTemplateName)!
+                imageView.image = NSImage(named: NSImage.touchBarPlayTemplateName)!
             } else {
                 imageView.image = MusicServer.shared.coverImage
             }
             artistLabel.attributedTitle = NSAttributedString(string: MusicServer.shared.artist, attributes: [ NSAttributedString.Key.foregroundColor : NSColor.gray])
             songLabel.title = MusicServer.shared.song
-            view = stackView
+            stackView.setViews([imageView, labelView], in: .leading)
         } else {
-            view = NSStackView()
+            stackView.setViews([], in: .leading)
         }
     }
     
