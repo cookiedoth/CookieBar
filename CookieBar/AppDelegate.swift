@@ -17,7 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let _ = TouchBarController.shared
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let button = statusItem.button {
-            button.title = "CookieBar"
+            let image = NSImage(named: "cookie-small")!
+            button.image = image
         }
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
