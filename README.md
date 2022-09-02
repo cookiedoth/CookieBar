@@ -57,6 +57,8 @@ This JSON can contain not all fields if only part of the data has changed.
 
 The server sends `play`, `pause`, and `next` commands over WebSocket to the last connected client.
 
+Modded unofficial **Yandex.Music** desktop app for MacOS that supports this API: [click](https://github.com/cookiedoth/yandex-music-app).
+
 # References
 
 * [**MTMR**](https://github.com/Toxblh/MTMR) – a highly customizable TouchBar plugin. I was not able to define my widgets in the config, which prompted me to create an app myself
