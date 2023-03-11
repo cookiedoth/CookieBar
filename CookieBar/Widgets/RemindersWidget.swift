@@ -9,10 +9,33 @@
 import Cocoa
 import EventKit
 
+class ReminderKiller : NSObject {
+    private let store: EKEventStore
+    private let title: String
+    
+    init(store: EKEventStore, title: String) {
+        self.store = store
+        self.title = title
+        super.init()
+    }
+
+    @objc func completeReminder(sender: NSGestureRecognizer) {
+        print("remove ", self.title)
+        self.store.fetchReminders(matching: self.store.predicateForReminders(in: nil), completion: {(_ reminders: [EKReminder]?) -> Void in
+            for reminder in reminders! {
+                if reminder.title == self.title {
+                    try! self.store.remove(reminder, commit: true)
+                }
+            }
+        })
+    }
+}
+
 class RemindersWidget: NSCustomTouchBarItem {
     private var stackView: NSStackView
     private var timer: Timer!
     private var store = EKEventStore()
+    private var reminderKillers: [ReminderKiller] = []
     
     override init(identifier: NSTouchBarItem.Identifier) {
         stackView = NSStackView(views: [])
@@ -29,28 +52,35 @@ class RemindersWidget: NSCustomTouchBarItem {
         }
     }
 
-    @objc func completeReminder(sender: NSButton) {
-        let buttonTitle = sender.title
-        self.store.fetchReminders(matching: self.store.predicateForReminders(in: nil), completion: {(_ reminders: [EKReminder]?) -> Void in
-            for reminder in reminders! {
-                if reminder.title == buttonTitle {
-                    try! self.store.remove(reminder, commit: true)
-                }
+    @objc func pass(sender: NSButton) {}
+
+    func doUpdateReminders(reminders: [EKReminder]) {
+        var buttons: [NSView] = []
+        self.reminderKillers = []
+        for reminder in reminders {
+            if !reminder.isCompleted {
+                let button = NSButton(title: reminder.title, target: self, action: #selector(self.pass))
+                let g = NSPressGestureRecognizer()
+                let target = ReminderKiller(store: self.store, title: button.title)
+                g.numberOfTouchesRequired = 1;
+                g.minimumPressDuration = 1.1;
+                g.target = target;
+                g.action = #selector(target.completeReminder)
+                g.allowedTouchTypes = .direct
+                button.addGestureRecognizer(g)
+                buttons.append(button)
+                self.reminderKillers.append(target)
             }
-        })
+        }
+        buttons.append(NSButton(image: NSImage(named: NSImage.touchBarAddTemplateName)!, target: self, action: #selector(self.openReminders)))
+        self.stackView.setViews(buttons, in: .leading)
+        
     }
 
     @objc func updateReminders() {
         self.store.fetchReminders(matching: self.store.predicateForReminders(in: nil), completion: {(_ reminders: [EKReminder]?) -> Void in
-            var buttons: [NSView] = []
-            for reminder in reminders! {
-                if !reminder.isCompleted {
-                    buttons.append(NSButton(title: reminder.title, target: self, action: #selector(self.completeReminder)))
-                }
-            }
-            buttons.append(NSButton(image: NSImage(named: NSImage.touchBarAddTemplateName)!, target: self, action: #selector(self.openReminders)))
             DispatchQueue.main.async {
-                self.stackView.setViews(buttons, in: .leading)
+                self.doUpdateReminders(reminders: reminders!)
             }
         })
     }
